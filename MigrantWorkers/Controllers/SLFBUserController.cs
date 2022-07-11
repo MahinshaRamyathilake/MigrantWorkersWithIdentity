@@ -29,7 +29,7 @@ namespace MigrantWorkers.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.SFBUsers.Add(obj);
+                _db.SLFBUsers.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }

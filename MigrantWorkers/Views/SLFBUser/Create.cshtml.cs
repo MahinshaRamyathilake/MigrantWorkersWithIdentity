@@ -27,17 +27,17 @@ namespace MigrantWorkers.Views.SLFBUser
 
         [BindProperty]
         public SLFB_User SLFB_User { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.SFBUsers == null || SLFB_User == null)
+            if (!ModelState.IsValid || _context.SLFBUsers == null || SLFB_User == null)
             {
                 return Page();
             }
 
-            _context.SFBUsers.Add(SLFB_User);
+            _context.SLFBUsers.Add(SLFB_User);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

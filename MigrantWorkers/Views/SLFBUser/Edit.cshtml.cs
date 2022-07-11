@@ -25,18 +25,18 @@ namespace MigrantWorkers.Views.SLFBUser
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.SFBUsers == null)
+            if (id == null || _context.SLFBUsers == null)
             {
                 return NotFound();
             }
 
-            var slfb_user =  await _context.SFBUsers.FirstOrDefaultAsync(m => m.Id == id);
+            var slfb_user = await _context.SLFBUsers.FirstOrDefaultAsync(m => m.Id == id);
             if (slfb_user == null)
             {
                 return NotFound();
             }
             SLFB_User = slfb_user;
-           ViewData["UserID"] = new SelectList(_context.Users, "Id", "UserName");
+            ViewData["UserID"] = new SelectList(_context.Users, "Id", "UserName");
             return Page();
         }
 
@@ -72,7 +72,7 @@ namespace MigrantWorkers.Views.SLFBUser
 
         private bool SLFB_UserExists(int id)
         {
-          return (_context.SFBUsers?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.SLFBUsers?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

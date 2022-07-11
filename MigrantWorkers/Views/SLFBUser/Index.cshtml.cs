@@ -23,9 +23,9 @@ namespace MigrantWorkers.Views.SLFBUser
 
         public async Task OnGetAsync()
         {
-            if (_context.SFBUsers != null)
+            if (_context.SLFBUsers != null)
             {
-                SLFB_User = await _context.SFBUsers
+                SLFB_User = await _context.SLFBUsers
                 .Include(s => s.User).ToListAsync();
             }
         }

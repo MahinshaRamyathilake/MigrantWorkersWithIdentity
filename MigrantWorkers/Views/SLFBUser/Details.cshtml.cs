@@ -23,17 +23,17 @@ namespace MigrantWorkers.Views.SLFBUser
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.SFBUsers == null)
+            if (id == null || _context.SLFBUsers == null)
             {
                 return NotFound();
             }
 
-            var slfb_user = await _context.SFBUsers.FirstOrDefaultAsync(m => m.Id == id);
+            var slfb_user = await _context.SLFBUsers.FirstOrDefaultAsync(m => m.Id == id);
             if (slfb_user == null)
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 SLFB_User = slfb_user;
             }
