@@ -12,5 +12,6 @@ namespace MigrantWorkers.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<SLFB_User> SFBUsers { get; set; }
     }
 }
