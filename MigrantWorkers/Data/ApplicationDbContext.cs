@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MigrantWorkers.Models;
 
 namespace MigrantWorkers.Data
 {
@@ -9,5 +10,7 @@ namespace MigrantWorkers.Data
             : base(options)
         {
         }
+
+        public DbSet<User> Users { get; set; }
     }
 }
