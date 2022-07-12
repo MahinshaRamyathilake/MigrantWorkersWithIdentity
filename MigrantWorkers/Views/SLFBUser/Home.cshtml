@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (SignInManager.IsSignedIn(User)) {
+    <div class="row">
+        <div class="col">
+            @section Scripts{
+                @{
+                    <partial name="_SLFBUserSideNav" />
+                }
+            }
+        </div>
+    </div>
+}
+
+else {
+    <h1>You have not logged in!</h1>
+}

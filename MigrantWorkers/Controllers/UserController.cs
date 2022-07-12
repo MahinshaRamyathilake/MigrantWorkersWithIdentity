@@ -18,16 +18,11 @@ namespace MigrantWorkers.Controllers
         }
 
         //GET
-        public IActionResult Create(User obj)
+        public int Create(User obj)
         {
-            if(ModelState.IsValid)
-            {
-                _db.Users.Add(obj);
-                _db.SaveChanges();
-                TempData["success"] = "User Created Successfully!";
-                return RedirectToAction("Index", "Home");
-            }
-            return View(obj);
+            _db.Users.Add(obj);
+            var _user = _db.SaveChanges();
+            return _user;
         }
     }
 }
