@@ -60,7 +60,7 @@ namespace MigrantWorkers.Controllers
 
                     var userId = await _userManager.GetUserIdAsync(iuser);
 
-                    await _signInManager.SignInAsync(iuser, isPersistent: false);
+                    //await _signInManager.SignInAsync(iuser, isPersistent: false);
                     //return LocalRedirect(returnUrl);
                 }
                 foreach (var error in result.Errors)
@@ -70,6 +70,7 @@ namespace MigrantWorkers.Controllers
 
                 var user = new MigrantWorkers.Models.User();
                 var _userController = new UserController(_db);
+
                 user.UserName = obj.UserName;
                 user.UserType = obj.UserType;
                 user.status = obj.status;
