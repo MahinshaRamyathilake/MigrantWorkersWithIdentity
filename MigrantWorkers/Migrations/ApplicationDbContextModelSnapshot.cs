@@ -215,6 +215,49 @@ namespace MigrantWorkers.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("MigrantWorkers.Models.Agency", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Contact_No")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("License_Exp_Date")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("License_No")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Reg_No")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Website")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Agencies");
+                });
+
             modelBuilder.Entity("MigrantWorkers.Models.Embassy", b =>
                 {
                     b.Property<int>("Id")
