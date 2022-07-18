@@ -80,7 +80,7 @@ namespace MigrantWorkers.Controllers
 
         public IActionResult Delete(int id)
         {
-            Agency agency = _db.Agencies.Find(id);
+            var agency = _db.Agencies.Find(id);
             _db.Agencies.Remove(agency);
             _db.SaveChanges();
             return RedirectToAction("Index");
