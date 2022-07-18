@@ -89,5 +89,38 @@ namespace MigrantWorkers.Controllers
             }
             return View(obj);
         }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var slfbuser = _db.SLFBUsers.Find(id);
+            if (slfbuser == null) return View("Error");
+            return View(slfbuser);
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var slfbuser = _db.SLFBUsers.Find(id);
+            if (slfbuser == null) return View("Error");
+            return View(slfbuser);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(SLFB_User slfbuser)
+        {
+                _db.SLFBUsers.Update(slfbuser);
+                _db.SaveChanges();
+                return View(slfbuser);
+            
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var slfbuser = _db.SLFBUsers.Find(id);
+            _db.SLFBUsers.Remove(slfbuser);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

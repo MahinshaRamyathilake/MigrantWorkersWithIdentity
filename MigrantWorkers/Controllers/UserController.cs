@@ -21,8 +21,8 @@ namespace MigrantWorkers.Controllers
         public int Create(User obj)
         {
             _db.Users.Add(obj);
-            var _user = _db.SaveChanges();
-            return _user;
+            _db.SaveChanges();
+            return obj.Id;
         }
     }
 }
