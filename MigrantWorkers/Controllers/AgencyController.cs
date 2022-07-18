@@ -8,9 +8,9 @@ namespace MigrantWorkers.Controllers
     {
         private readonly ApplicationDbContext _db;
 
-        public AgencyController (ApplicationDbContext _db)
+        public AgencyController(ApplicationDbContext db)
         {
-            _db = _db;
+            _db = db;
         }
 
         [HttpGet]
