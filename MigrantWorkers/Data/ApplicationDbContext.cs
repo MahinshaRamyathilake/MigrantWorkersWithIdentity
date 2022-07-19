@@ -17,5 +17,7 @@ namespace MigrantWorkers.Data
         public DbSet<Embassy> Embassies { get; set; }
 
         public DbSet<Agency> Agencies { get; set; }
+
+        public DbSet<Agency_User> AgencyUsers { get; set; }
     }
 }

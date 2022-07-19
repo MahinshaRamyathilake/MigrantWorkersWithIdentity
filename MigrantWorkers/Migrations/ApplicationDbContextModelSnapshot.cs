@@ -258,6 +258,45 @@ namespace MigrantWorkers.Migrations
                     b.ToTable("Agencies");
                 });
 
+            modelBuilder.Entity("MigrantWorkers.Models.Agency_User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("AgencyID")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Fname")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Lname")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int?>("UserID")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AgencyID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("AgencyUsers");
+                });
+
             modelBuilder.Entity("MigrantWorkers.Models.Embassy", b =>
                 {
                     b.Property<int>("Id")
@@ -394,6 +433,25 @@ namespace MigrantWorkers.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MigrantWorkers.Models.Agency_User", b =>
+                {
+                    b.HasOne("MigrantWorkers.Models.Agency", "Agency")
+                        .WithMany()
+                        .HasForeignKey("AgencyID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MigrantWorkers.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Agency");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MigrantWorkers.Models.SLFB_User", b =>
