@@ -3,6 +3,7 @@ using MigrantWorkers.Data;
 using MigrantWorkers.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
+using Microsoft.EntityFrameworkCore;
 
 namespace MigrantWorkers.Controllers
 {
@@ -71,6 +72,7 @@ namespace MigrantWorkers.Controllers
 
                 var agencyUser = new Agency_User();
                 agencyUser.Id = id;
+                agencyUser.User = _db.Users.Find(id);
                 agencyUser.AgencyID = obj.AgencyID;
                 agencyUser.Fname = obj.Fname;
                 agencyUser.Lname = obj.Lname;
