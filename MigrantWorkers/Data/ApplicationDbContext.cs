@@ -21,5 +21,7 @@ namespace MigrantWorkers.Data
         public DbSet<Agency_User> AgencyUsers { get; set; }
 
         //public DbSet<MigrantWorkers.Models.Agency_User_Input>? Agency_User_Input { get; set; }
+
+        public DbSet<Embassy_User> EmbassyUsers { get; set; }
     }
 }
