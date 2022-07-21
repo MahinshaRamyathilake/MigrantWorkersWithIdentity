@@ -71,6 +71,7 @@ namespace MigrantWorkers.Controllers
 
                 var embassyUser = new Embassy_User();
                 embassyUser.Id = id;
+                embassyUser.User = _db.Users.Find(id);
                 embassyUser.EmbassyID = obj.EmbassyID;
                 embassyUser.Fname = obj.Fname;
                 embassyUser.Lname = obj.Lname;
