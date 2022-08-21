@@ -27,6 +27,12 @@ namespace MigrantWorkers.Controllers
         }
 
         [HttpGet]
+        public IActionResult Home()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Index()
         {
             var agencyusers = _db.AgencyUsers;
@@ -71,9 +77,8 @@ namespace MigrantWorkers.Controllers
                 var id = _userController.Create(user);
 
                 var agencyUser = new Agency_User();
-                agencyUser.Id = id;
                 agencyUser.User = _db.Users.Find(id);
-                agencyUser.AgencyID = obj.AgencyID;
+                agencyUser.Agency = _db.Agencies.Find(obj.AgencyID);
                 agencyUser.Fname = obj.Fname;
                 agencyUser.Lname = obj.Lname;
                 agencyUser.Address = obj.Address;

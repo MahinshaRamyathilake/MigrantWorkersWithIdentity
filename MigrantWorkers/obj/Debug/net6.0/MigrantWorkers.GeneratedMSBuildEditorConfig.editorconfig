@@ -59,6 +59,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmN5VXNlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/AgencyUser/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmN5VXNlclxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/AgencyUser/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmN5VXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -91,6 +95,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1iYXNzeVVzZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/EmbassyUser/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1iYXNzeVVzZXJcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/EmbassyUser/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1iYXNzeVVzZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -121,6 +129,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/_AgencyMgtSideNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZ2VuY3lNZ3RTaWRlTmF2LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/_EmbassyMgtSideNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FbWJhc3N5TWd0U2lkZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/_LoginPartial.cshtml]

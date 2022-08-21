@@ -26,6 +26,12 @@ namespace MigrantWorkers.Controllers
         }
 
         [HttpGet]
+        public IActionResult Home()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Index()
         {
             var embassyusers = _db.EmbassyUsers;
@@ -70,9 +76,8 @@ namespace MigrantWorkers.Controllers
                 var id = _userController.Create(user);
 
                 var embassyUser = new Embassy_User();
-                embassyUser.Id = id;
                 embassyUser.User = _db.Users.Find(id);
-                embassyUser.EmbassyID = obj.EmbassyID;
+                embassyUser.Embassy = _db.Embassies.Find(obj.EmbassyID);
                 embassyUser.Fname = obj.Fname;
                 embassyUser.Lname = obj.Lname;
                 embassyUser.Address = obj.Address;
