@@ -135,8 +135,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZ2VuY3lNZ3RTaWRlTmF2LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/_AgencyUserSideNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZ2VuY3lVc2VyU2lkZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/_EmbassyMgtSideNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FbWJhc3N5TWd0U2lkZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/_EmbassyUserSideNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FbWJhc3N5VXNlclNpZGVOYXYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Office/MigrantWorkers/MigrantWorkers/MigrantWorkers/Views/Shared/_LoginPartial.cshtml]
