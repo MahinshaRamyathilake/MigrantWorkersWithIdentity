@@ -37,7 +37,7 @@ namespace MigrantWorkers.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Add(obj);
+                _db.Agencies.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
