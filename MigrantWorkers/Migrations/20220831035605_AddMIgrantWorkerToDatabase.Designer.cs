@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MigrantWorkers.Data;
 
@@ -10,9 +11,10 @@ using MigrantWorkers.Data;
 namespace MigrantWorkers.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220831035605_AddMIgrantWorkerToDatabase")]
+    partial class AddMIgrantWorkerToDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -367,38 +369,6 @@ namespace MigrantWorkers.Migrations
                     b.ToTable("EmbassyUsers");
                 });
 
-            modelBuilder.Entity("MigrantWorkers.Models.FamilyDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ContactNo")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Relationship")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("UserID")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("FamilyDetails");
-                });
-
             modelBuilder.Entity("MigrantWorkers.Models.Migrant_Worker", b =>
                 {
                     b.Property<int>("Id")
@@ -662,17 +632,6 @@ namespace MigrantWorkers.Migrations
                         .IsRequired();
 
                     b.Navigation("Embassy");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MigrantWorkers.Models.FamilyDetail", b =>
-                {
-                    b.HasOne("MigrantWorkers.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("User");
                 });

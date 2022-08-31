@@ -24,8 +24,12 @@ namespace MigrantWorkers.Data
 
         public DbSet<Embassy_User> EmbassyUsers { get; set; }
 
-        //public DbSet<MigrantWorkers.Models.Agency_User_Input>? Agency_User_Input { get; set; }
+        //public DbSet<MigrantWorkers.Models.Embassy_User_Input>? Embassy_User_Input { get; set; }
 
-        public DbSet<MigrantWorkers.Models.Embassy_User_Input>? Embassy_User_Input { get; set; }
+        public DbSet<Query> Queries { get; set; } 
+
+        public DbSet<Migrant_Worker> Migrant_Workers { get; set; } 
+
+        public DbSet<FamilyDetail> FamilyDetails { get; set; }
     }
 }

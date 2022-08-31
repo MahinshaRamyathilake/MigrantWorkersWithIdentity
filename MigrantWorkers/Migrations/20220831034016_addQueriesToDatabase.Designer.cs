@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MigrantWorkers.Data;
 
@@ -10,9 +11,10 @@ using MigrantWorkers.Data;
 namespace MigrantWorkers.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220831034016_addQueriesToDatabase")]
+    partial class addQueriesToDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -367,123 +369,6 @@ namespace MigrantWorkers.Migrations
                     b.ToTable("EmbassyUsers");
                 });
 
-            modelBuilder.Entity("MigrantWorkers.Models.FamilyDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ContactNo")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Relationship")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("UserID")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("FamilyDetails");
-                });
-
-            modelBuilder.Entity("MigrantWorkers.Models.Migrant_Worker", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("AddressInSriLanka")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AgencyID")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("ContactNo")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Dob")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Fname")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Fullname")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Lname")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("NameWithInit")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("PassportExpDate")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Passport_no")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("UserID")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Visa_no")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Workplace")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Workplaceaddress")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("no_of_dependants")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AgencyID");
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("Migrant_Workers");
-                });
-
             modelBuilder.Entity("MigrantWorkers.Models.Query", b =>
                 {
                     b.Property<int>("Id")
@@ -662,36 +547,6 @@ namespace MigrantWorkers.Migrations
                         .IsRequired();
 
                     b.Navigation("Embassy");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MigrantWorkers.Models.FamilyDetail", b =>
-                {
-                    b.HasOne("MigrantWorkers.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("MigrantWorkers.Models.Migrant_Worker", b =>
-                {
-                    b.HasOne("MigrantWorkers.Models.Agency", "Agency")
-                        .WithMany()
-                        .HasForeignKey("AgencyID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MigrantWorkers.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Agency");
 
                     b.Navigation("User");
                 });
