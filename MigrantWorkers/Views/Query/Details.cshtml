@@ -1,0 +1,49 @@
+﻿@model MigrantWorkers.Models.Query
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Query</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.To)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.To)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Agency)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Agency.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Embassy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Embassy.Ambassador)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a href="javascript: history.go(-1)">Back to List</a>
+</div>

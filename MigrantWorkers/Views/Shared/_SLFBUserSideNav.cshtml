@@ -12,7 +12,7 @@
         >
           <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
         </a>
-        <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+        <a asp-controller="Query" asp-action="Index" class="list-group-item list-group-item-action py-2 ripple">
             <i class="fas fa-lock fa-fw me-3"></i><span>View Requests</span>
         </a>
         <a asp-controller="Agency" asp-action="Index" class="list-group-item list-group-item-action py-2 ripple">
@@ -29,6 +29,9 @@
         </a>
         <a asp-controller="SLFBUser" asp-action="Index" class="list-group-item list-group-item-action py-2 ripple">
           <i class="fas fa-chart-area fa-fw me-3"></i><span>SLFB Users</span>
+        </a>
+        <a asp-controller="MigrantWorker" asp-action="Index" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-area fa-fw me-3"></i><span>Migrant Users</span>
         </a>
         @*<a href="#" class="list-group-item list-group-item-action py-2 ripple"
           ><i class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a

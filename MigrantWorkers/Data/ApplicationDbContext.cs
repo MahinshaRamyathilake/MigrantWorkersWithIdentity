@@ -31,5 +31,7 @@ namespace MigrantWorkers.Data
         public DbSet<Migrant_Worker> Migrant_Workers { get; set; } 
 
         public DbSet<FamilyDetail> FamilyDetails { get; set; }
+
+        public DbSet<MigrantWorkers.Models.Migrant_Worker_Input>? Migrant_Worker_Input { get; set; }
     }
 }

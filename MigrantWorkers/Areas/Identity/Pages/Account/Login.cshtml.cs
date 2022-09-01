@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using MigrantWorkers.Data;
 
 namespace MigrantWorkers.Areas.Identity.Pages.Account
 {
@@ -21,11 +22,13 @@ namespace MigrantWorkers.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly ApplicationDbContext _db;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger, ApplicationDbContext db)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _db = db;
         }
 
         /// <summary>
@@ -113,7 +116,11 @@ namespace MigrantWorkers.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
-
+            var user = _db.Users.First(x => x.UserName == Input.UserName);
+            if (user.status == "INACTIVE")
+            {
+                return RedirectToAction("Index", "Home");
+            }
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
             if (ModelState.IsValid)
@@ -124,7 +131,31 @@ namespace MigrantWorkers.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    if (user.UserType == "SLFBUSER")
+                    {
+                        return RedirectToAction("Home", "SLFBUser");
+                    }
+                    else if (user.UserType == "AGENCYMGT")
+                    {
+                        return RedirectToAction("Home", "AgencyUser");
+                    }
+                    else if (user.UserType == "AGENCYUSER")
+                    {
+                        return RedirectToAction("UserHome", "AgencyUser");
+                    }
+                    else if (user.UserType == "EMBASSYMGT")
+                    {
+                        return RedirectToAction("Home", "EmbassyUser");
+                    }
+                    else if (user.UserType == "EMBASSYUSER")
+                    {
+                        return RedirectToAction("UserHome", "EmbassyUser");
+                    }
+                    else if (user.UserType == "MIGRANTUSER")
+                    {
+                        return RedirectToAction("Home", "MigrantWorker");
+                    }
+                    //return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {

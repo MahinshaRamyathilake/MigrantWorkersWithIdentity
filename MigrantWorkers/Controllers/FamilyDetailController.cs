@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MigrantWorkers.Data;
 using MigrantWorkers.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace MigrantWorkers.Controllers
 {
@@ -14,7 +15,9 @@ namespace MigrantWorkers.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var user = _db.Users.First(x => x.UserName == User.Identity.Name);
+            var familydetails = _db.FamilyDetails.Where(x => x.UserID == user.Id);
+            return View(familydetails);
         }
         [HttpGet]
         public IActionResult Create()

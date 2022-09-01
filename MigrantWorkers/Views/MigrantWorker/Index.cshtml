@@ -1,0 +1,135 @@
+﻿@model IEnumerable<MigrantWorkers.Models.Migrant_Worker>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameWithInit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Workplace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Workplaceaddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressInSriLanka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.no_of_dependants)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Visa_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passport_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassportExpDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agency)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameWithInit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workplace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workplaceaddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressInSriLanka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.no_of_dependants)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Visa_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassportExpDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agency.Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

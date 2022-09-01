@@ -33,8 +33,14 @@ namespace MigrantWorkers.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var agencyusers = _db.AgencyUsers;
-            return View(agencyusers);
+            var migrantusers = _db.Migrant_Workers;
+            return View(migrantusers);
+        }
+        [HttpGet]
+        public IActionResult Request()
+        {
+            var migrantusers = _db.Migrant_Workers.Where(x => x.User.status == "INACTIVE");
+            return View(migrantusers);
         }
         [HttpGet]
         public IActionResult Create()
@@ -104,6 +110,17 @@ namespace MigrantWorkers.Controllers
             var migrantWorker = _db.Migrant_Workers.Find(id);
             if (migrantWorker == null) return View("Error");
             return View(migrantWorker);
+        }
+        [HttpPost]
+        public IActionResult Accept(int id)
+        {
+            var migrantWorker = _db.Migrant_Workers.Find(id);
+            if (migrantWorker == null) return View("Error");
+            var user = _db.Users.Find(migrantWorker.Id);
+            if (user == null) return View("Error");
+            user.status = "ACTIVE";
+            _db.Users.Update(user);
+            return RedirectToAction("Request");
         }
         [HttpGet]
         public IActionResult Edit(int id)
