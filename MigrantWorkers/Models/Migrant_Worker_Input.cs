@@ -15,7 +15,6 @@ namespace MigrantWorkers.Models
         public string Password { get; set; }
         [Required]
         public string UserType { get; set; }
-        [Required]
         public string status { get; set; }
         [Required]
         public string Fname { get; set; }

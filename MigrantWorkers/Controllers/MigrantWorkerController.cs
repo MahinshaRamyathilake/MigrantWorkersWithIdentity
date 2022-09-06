@@ -75,7 +75,7 @@ namespace MigrantWorkers.Controllers
 
                 user.UserName = obj.UserName;
                 user.UserType = obj.UserType;
-                user.status = obj.status;
+                user.status = "INACTIVE";
                 var id = _userController.Create(user);
 
                 var migrantWorker = new Migrant_Worker();
@@ -100,7 +100,7 @@ namespace MigrantWorkers.Controllers
 
                 _db.Migrant_Workers.Add(migrantWorker);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View(obj);
         }
